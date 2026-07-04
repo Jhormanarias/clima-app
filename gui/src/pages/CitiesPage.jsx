@@ -4,14 +4,22 @@ import WeatherWidget from "../components/WeatherWidget";
 
 export default function CitiesPage() {
   return (
-    <div className="min-h-screen bg-slate-100 p-6">
-      <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
-        <div className="space-y-6">
+    <main className="h-dvh overflow-hidden bg-slate-100 p-4 md:p-6">
+      <div className="grid h-full grid-cols-1 gap-4 lg:grid-cols-2">
+        <div className="min-h-0">
           <CityForm />
-          <CityList />
         </div>
-        <WeatherWidget />
+
+        <div className="grid min-h-0 grid-rows-2 gap-4">
+          <div className="min-h-0">
+            <CityList />
+          </div>
+
+          <div className="min-h-0">
+            <WeatherWidget />
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
