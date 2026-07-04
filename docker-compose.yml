@@ -7,6 +7,9 @@ services:
       - 3001:80
     depends_on:
       - api
+    volumes:
+    - ./gui:/app
+    - /app/node_modules
   api:
     image: api
     build: ./api
