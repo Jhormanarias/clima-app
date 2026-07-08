@@ -83,6 +83,18 @@ OPENWEATHER_UNITS=metric
 ```bash
 docker compose up --build
 ```
+## Inicialización del backend
+
+Si el proyecto te presenta algún error al ejecutarlo y requiere inicialización manual del backend, ejecutar dentro del contenedor de la API:
+
+```bash
+composer install
+php artisan key:generate
+php artisan migrate --seed
+```
+
+Laravel utiliza migraciones y seeders para preparar la estructura y los datos iniciales de la base de datos.
+
 
 ## Consideraciones técnicas
 
