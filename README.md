@@ -88,12 +88,22 @@ docker compose up --build
 Si el proyecto te presenta algún error al ejecutarlo y requiere inicialización manual del backend, ejecutar dentro del contenedor de la API:
 
 ```bash
+docker compose exec api bash
 composer install
 php artisan key:generate
 php artisan migrate --seed
 ```
 
 Laravel utiliza migraciones y seeders para preparar la estructura y los datos iniciales de la base de datos.
+
+## Inicialización del frontend
+
+Si el proyecto te presenta algún error al ejecutarlo y requiere inicialización manual del frontend, ejecutar dentro del contenedor de GUI:
+
+```bash
+docker compose exec gui sh
+npm i
+```
 
 
 ## Consideraciones técnicas
